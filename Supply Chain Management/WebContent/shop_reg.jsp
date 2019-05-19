@@ -10,7 +10,7 @@
 
 <html>
     <head>
-        <title>Vendor Registration</title>
+        <title>Shopkeeper Registration</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -49,7 +49,7 @@
                 <div class="col-xs-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 style="text-align:center;">Vendor Registration</h4>
+                            <h4 style="text-align:center;">Shopkeeper Registration</h4>
                         </div>
                         <div class="panel-body">
                             
@@ -59,7 +59,7 @@
                    
                                 <form action="reg.jsp" method="post">
                                          <div class="form-group">
-                            <input type="text"  class="form-control" name="name"  placeholder="Name" >
+                            <input type="text"  class="form-control" name="name"  placeholder="Name of Shop" >
                                          </div>
                                      <div class="form-group">
                             <input type="text"  class="form-control" name="uname"  placeholder="Username" >
@@ -74,19 +74,7 @@
                             <input type="text"  class="form-control" name="mob"  placeholder="Contact" >
                                          </div>
                                          <div class="form-group">
-                                         <label class = "form-control" >Please select what you sell</label>
-                                         <label for="Bat" style="text-align:center;">Bat</label>
-                                         <input type="checkbox"   name="Bat"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Ball</label>
-                                         <input type="checkbox"   name="Ball"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Football</label>
-                                         <input type="checkbox"   name="Fball"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Chess</label>
-                                         <input type="checkbox"   name="Chess"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Carrom</label>
-                                         <input type="checkbox"   name="Carrom"  placeholder="Items for sale" >
-                                            <label for="Bat" style="text-align:center;">Rope</label>
-                                         <input type="checkbox"   name="Rope"  placeholder="Items for sale" >
+                                 
                                          </div>
                                          
                              
