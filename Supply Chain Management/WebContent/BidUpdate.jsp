@@ -10,7 +10,7 @@ String bid = (String)session.getAttribute("bid");
 
 session.setAttribute("item",item);  
 session.setAttribute("vendor",vendor);
-session.setAttribute("bid","Harry");
+session.setAttribute("bid",bid);
 
 Connection con = null;
 PreparedStatement ps = null;

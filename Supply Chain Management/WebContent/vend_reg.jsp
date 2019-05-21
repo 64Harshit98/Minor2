@@ -3,22 +3,19 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 
-
-
-  
-  <!DOCTYPE html>
-
+<!DOCTYPE html>
 <html>
     <head>
         <title>Vendor Registration</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <style>
-    h3{
-    text-align:center;
-    }</style>
+	    h3{
+	    text-align:center;
+	    }
+    </style>
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-top">
@@ -29,7 +26,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                   <a href="admin.jsp" class="navbar-brand">Supply Chain Management</a>
+                   <a href="index.jsp" class="navbar-brand">Supply Chain Management</a>
                 </div>
                <div class="collapse navbar-collapse" id="myNavbar">
                    <ul class="nav navbar-nav navbar-right">
@@ -43,7 +40,6 @@
             <div class="row row_style">
                 <div class="col-xs-3">
                     <div class="panel">
-                        
                     </div>
                 </div>
                 <div class="col-xs-5">
@@ -57,43 +53,30 @@
                                 <div class="row">
                                    <div class="col-xs-4">
                    
-                                <form action="reg.jsp" method="post">
-                                         <div class="form-group">
-                            <input type="text"  class="form-control" name="name"  placeholder="Name" >
-                                         </div>
+                                <form action="reg.jsp">
+                                <input type="hidden" name="role" value="Vendor"/>
+                                      <div class="form-group">
+                         				<input type="text"  class="form-control" name="name"  placeholder="Name of Vendor" >
+                                      </div>
                                      <div class="form-group">
-                            <input type="text"  class="form-control" name="uname"  placeholder="Username" >
-                                         </div>
+                           				<input type="text"  class="form-control" name="uname"  placeholder="Enter your Id" >
+                                   	</div>
                                      <div class="form-group">
-                            <input type="password"  class="form-control" name="pass"  placeholder="Password" >
-                                         </div>
+                           				<input type="password"  class="form-control" name="pass"  placeholder="Password" >
+                                     </div>
                                      <div class="form-group">
-                            <input type="password"  class="form-control" name="cpass"  placeholder="Confirm Password" >
-                                         </div>
+                           				<input type="password"  class="form-control" name="cpass"  placeholder="Confirm Password" >
+                                     </div>
                                      <div class="form-group">
-                            <input type="text"  class="form-control" name="mob"  placeholder="Contact" >
-                                         </div>
-                                         <div class="form-group">
-                                         <label class = "form-control" >Please select what you sell</label>
-                                         <label for="Bat" style="text-align:center;">Bat</label>
-                                         <input type="checkbox"   name="Bat"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Ball</label>
-                                         <input type="checkbox"   name="Ball"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Football</label>
-                                         <input type="checkbox"   name="Fball"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Chess</label>
-                                         <input type="checkbox"   name="Chess"  placeholder="Items for sale" >
-                                         <label for="Bat" style="text-align:center;">Carrom</label>
-                                         <input type="checkbox"   name="Carrom"  placeholder="Items for sale" >
-                                            <label for="Bat" style="text-align:center;">Rope</label>
-                                         <input type="checkbox"   name="Rope"  placeholder="Items for sale" >
-                                         </div>
-                                         
-                             
-                                          
-                                         
-                                     
-                                    <button type="submit" value="Register" class="btn btn-primary">Submit</button>
+                       					<input type="number"  class="form-control" name="contact"  placeholder="Contact" >
+                                     </div>
+                                     <div class="form-group">
+                                     	<input type="email"  class="form-control" name="email"  placeholder="Email" >                                 
+                                     </div>   
+                                     <div class="form-group">
+                           				<input type="text"  class="form-control" name="city"  placeholder="City" >
+                                   	</div>
+                                      <button type="submit" value="Register" class="btn btn-primary">Submit</button>
                                 </form>
                                    </div>
                                 </div>

@@ -13,7 +13,6 @@ Class.forName("com.mysql.jdbc.Driver");
 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scm", "root", "");
 Statement st=conn.createStatement();
 int i=st.executeUpdate("insert into bidding(item,base,current,vendor,bid)values('"+item+"','"+base+"','"+current+"','"+vendor+"','NA')");
-out.println("Thank you for register ! Please <a href='index.html'>Login</a> to continue.");
 }
 catch(Exception e)
 {
@@ -28,7 +27,7 @@ e.printStackTrace();
 <title>Insert title here</title>
 </head>
 <body>
-<form action=BidMain.jsp>
+<form action=Bids.jsp>
 	<table>
 	  <tr>
 	    <th>Item</th>

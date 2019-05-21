@@ -44,7 +44,7 @@
                 <div class="col-xs-5">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h4 style="text-align:center;">Shopkeeper Registration</h4>
+                            <h4 style="text-align:center;">Login</h4>
                         </div>
                         <div class="panel-body">
                             
@@ -52,29 +52,24 @@
                                 <div class="row">
                                    <div class="col-xs-4">
                    
-                                <form action="reg.jsp">
-                                <input type="hidden" name="role" value="Shopkeeper"/>
-                                      <div class="form-group">
-                         				<input type="text"  class="form-control" name="name"  placeholder="Name of ShopKeeper" >
-                                      </div>
-                                     <div class="form-group">
-                           				<input type="text"  class="form-control" name="uname"  placeholder="Username" >
-                                   	</div>
-                                     <div class="form-group">
-                           				<input type="password"  class="form-control" name="pass"  placeholder="Password" >
-                                     </div>
-                                     <div class="form-group">
-                           				<input type="password"  class="form-control" name="cpass"  placeholder="Confirm Password" >
-                                     </div>
-                                     <div class="form-group">
-                       					<input type="number"  class="form-control" name="contact"  placeholder="Contact" >
-                                     </div>
+                                <form action="log.jsp">
                                      <div class="form-group">
                                      	<input type="email"  class="form-control" name="email"  placeholder="Email" >                                 
-                                     </div>   
+                                     </div>
                                      <div class="form-group">
-                           				<input type="text"  class="form-control" name="city"  placeholder="City" >
-                                   	</div>                                  
+                           				<input type="password"  class="form-control" name="pass"  placeholder="Password" >
+                                     </div>                                  
+                                     <div class="form-group">
+										  <div class="form-group">
+										    <label>You are</label><br>
+										  </div>
+										  <select name="role" class="form-group">
+										    <option selected>Choose...</option>
+										    <option value="shopkeeper">Shopkeeper</option>
+										    <option value="vendor">Vendor</option>
+										  </select>
+										</div>
+                             
                                     <button type="submit" value="Register" class="btn btn-primary">Submit</button>
                                 </form>
                                    </div>

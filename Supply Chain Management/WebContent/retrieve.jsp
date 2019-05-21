@@ -3,16 +3,6 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%
-String item = request.getParameter("item");
-String vendor = request.getParameter("vendor");
-
-String email = (String)session.getAttribute("email");
-
-session.setAttribute("item",item);  
-session.setAttribute("vendor",vendor);
-session.setAttribute("bid",email);
-
-
 String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
 String database = "scm";
@@ -31,41 +21,33 @@ ResultSet resultSet = null;
 <html>
 <body>
 
-<h1>Live Bidding Dashboard</h1>
+<h1>Retrieve data from database in jsp</h1>
 <table border="1">
+<tr>
+<td>Vendor Id</td>
+<td>Vendor Name</td>
+<td>Item name</td>
+<td>Item Quantity</td>
+<td>Cost per Quantity</td>
+<td>Contact Number</td>
+
+</tr>
 <%
 try{
-	
 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
 statement=connection.createStatement();
-String sql ="select * from bidding where vendor ='"+vendor+"' and item = '"+item+"' ";
+String sql ="select * from main ";
 resultSet = statement.executeQuery(sql);
 while(resultSet.next()){
 %>
 <tr>
-<th>Vendor</th>
-<td><%=resultSet.getString("vendor") %></td>
-</tr>
-<tr>
-<th>Item name</th>
+<td><%=resultSet.getString("vid") %></td>
+<td><%=resultSet.getString("vname") %></td>
 <td><%=resultSet.getString("item") %></td>
+<td><%=resultSet.getString("qty") %></td>
+<td><%=resultSet.getString("cost") %></td>
+<td><%=resultSet.getString("contact") %></td>
 </tr>
-<tr>
-<th>Base Price</th>
-<td><%=resultSet.getString("base") %></td>
-</tr>
-<tr>
-<th>Current Bid</th>
-<td><%=resultSet.getString("current") %></td>
-</tr>
-<tr>
-<th>Bidder</th>
-<td><%=resultSet.getString("bid") %></td>
-</tr>
-<tr>
-<td colspan="2"><center><a href="BidUpdate.jsp">Bid</a></center></td>
-</tr>
-
 <%
 }
 connection.close();

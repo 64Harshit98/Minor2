@@ -1,4 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,10 +25,18 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>                        
                     </button>
-                   <a href="index.jsp" class="navbar-brand">Supply Chain Management</a>
+                   <a href="#" class="navbar-brand">Supply Chain Management</a>
                 </div>
                <div class="collapse navbar-collapse" id="myNavbar">
+	               <%
+			       	if(session.getAttribute("user") == null || session.getAttribute("user").equals("")){
+			       	%>
+			       		<ul class="nav navbar-nav navbar-right">
+		                  	<li><a href="vend_reg.jsp"><span class="glyphicon glyphicon-user"></span> Sign Up for Vendor</a></li>
+		                    <li><a href="shop_reg.jsp"><span class="glyphicon glyphicon-log-in"></span> Sign up for Shopkeepers</a></li>
+		            	</ul>
 			       	<%
+			       	} else{
 			       		String name = (String)session.getAttribute("user");
 			       	%>
 			       		<ul class="nav navbar-nav navbar-right">
@@ -36,32 +48,41 @@
 								    <a class="dropdown-item" href="Logout.jsp">Logout</a>
 								</div>
 							</li>
-		            	</ul>                   
+		            	</ul>
+			       	<%
+			       	}
+			       	%>
+                   
                </div>
            </div>
        </div>
        <div class="container ">
        <center>
-        <form action=CreateBid.jsp>
-            <table>
-            <tr>
-                <th>Item</th>
-                <td><input type="text" name="item"></th>
-            </tr>
-            <tr>
-                <th>Price</td>
-                <td><input type="number" name="base"></td>
-            </tr>
-            <tr>
-                <th>Vendor</td>
-                <td><%= session.getAttribute("email")%></td>
-            </tr>
-            <tr>
-                <th><input type=submit value="Create Bid"></td>
-            </tr>
-            </table>
-        </form>
-       </center> 	
+       	<%
+       	if(session.getAttribute("user") == null || session.getAttribute("user").equals("")){
+       		out.println("<h1>Welcome to supply Chain Management</h1>");
+       	%>
+       		<a href="Login.jsp" class="btn btn-primary btn-lg " role="button">Login</a>
+       	<%
+       	} else{
+       		String name = (String)session.getAttribute("user");
+       		String role = (String)session.getAttribute("role");
+       		out.println("<h2>"+name+"</h2>");
+       		if(role.equalsIgnoreCase("Shopkeeper")){
+         %>
+         		<a href=Bids.jsp class="btn btn-primary">Join Bid</a>
+         <%
+           	} else if(role.equalsIgnoreCase("Vendor")){
+           		
+         %> 
+         		<a href=BidMain.jsp class="btn btn-primary">Create Your Bid</a>
+         <% 		
+           	}
+       	}
+       	%>
+       	
+       	</center>
+       	
        </div>
     </body>
 </html>
