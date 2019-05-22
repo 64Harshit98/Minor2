@@ -13,7 +13,7 @@
 	    }</style>
 	    </head>
     <body>
-        <div class="navbar navbar-inverse navbar-top">
+      <div class="navbar navbar-inverse navbar-top">
            <div class="container">
                <div class="navbar-header">
                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -40,29 +40,40 @@
                </div>
            </div>
        </div>
-       <div class="container ">
        <center>
-        <form action=CreateBid.jsp>
-            <table>
-            <tr>
-                <th>Item</th>
-                <td><input type="text" name="item"></th>
-            </tr>
-            <tr>
-                <th>Price</td>
-                <td><input type="number" name="base"></td>
-            </tr>
-            <tr>
-                <th>Vendor</td>
-                <td><%= session.getAttribute("email")%></td>
-            </tr>
-            <tr>
-                <th><input type=submit value="Create Bid"></td>
-            </tr>
-            </table>
-        </form>
-       </center> 	
+       <div class="col-xs-5">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 style="text-align:center;">Vendor Registration</h4>
+            </div>
+            <div class="panel-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <form action="CreateBid.jsp">
+                                <div class="form-group">
+                                    <input type="text"  class="form-control" name="item" placeholder="Enter Item Name">
+                                </div>
+                                <div class="form-group">
+                                    <input type="number"  class="form-control" name="base"  placeholder="Enter Base Price" >
+                                </div>
+                                <div class="form-group">
+                                    <input type="number"  class="form-control" name="qty"  placeholder="Quantity" >
+                                </div>   
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1"><%= session.getAttribute("email")%></label>
+                                </div>
+                                <button type="submit" value="Create Bid" class="btn btn-primary">Create Bid</button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
        </div>
+        </center>
     </body>
 </html>
   
