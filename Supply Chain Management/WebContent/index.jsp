@@ -60,7 +60,7 @@
        <center>
        	<%
        	if(session.getAttribute("user") == null || session.getAttribute("user").equals("")){
-       		out.println("<h1>Welcome to supply Chain Management</h1>");
+       		out.println("<h1>Welcome to Supply Chain Management</h1>");
        	%>
        		<a href="Login.jsp" class="btn btn-primary btn-lg " role="button">Login</a>
        	<%
@@ -71,11 +71,14 @@
        		if(role.equalsIgnoreCase("Shopkeeper")){
          %>
          		<a href=Bids.jsp class="btn btn-primary">Join Bid</a>
+         		<a href=Admin.jsp class="btn btn-success">Search Product</a>
          <%
            	} else if(role.equalsIgnoreCase("Vendor")){
            		
          %> 
          		<a href=BidMain.jsp class="btn btn-primary">Create Your Bid</a>
+         		<a href=stockentry.jsp class="btn btn-success">Enter Product</a>
+         		<a href=OwnBids.jsp class="btn btn-info"> Your Live Bids</a>
          <% 		
            	}
        	}

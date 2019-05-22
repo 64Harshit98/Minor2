@@ -21,7 +21,7 @@
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/scm", "root", "");
 				Statement st=conn.createStatement();
-						st.executeUpdate("insert into vendor(name,password,email,contact,city,vid,Verified)values('"+name+"','"+pass+"','"+email+"','"+contact+"','"+city+"','"+uname+"','NA')");
+						st.executeUpdate("insert into vendor(vid,username,password,email,contact,city,Verified)values('"+uname+"','"+name+"','"+pass+"','"+email+"','"+contact+"','"+city+"','NA')");
 						out.println("Thank you for registering as Vendor !");			 							
 					response.sendRedirect("index.jsp");
 				} catch(Exception e)

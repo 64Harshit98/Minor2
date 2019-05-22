@@ -54,7 +54,7 @@
                                    <div class="col-xs-4">
                    
                                 <form action="reg.jsp">
-                                <input type="hidden" name="role" value="Vendor"/>
+                                <input type="hidden" name="role" value="vendor"/>
                                       <div class="form-group">
                          				<input type="text"  class="form-control" name="name"  placeholder="Name of Vendor" >
                                       </div>
